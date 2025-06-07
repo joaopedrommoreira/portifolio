@@ -1,0 +1,294 @@
+/* ==================== ESTILOS GERAIS ==================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.section-text {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* ==================== CABEÇALHO (HERO) ==================== */
+/* Encontre este bloco no seu src/index.css */
+.header-hero {
+    color: #fff;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* LINHAS NOVAS - Adicione ou substitua daqui para baixo */
+    background: linear-gradient(-45deg, #0d1a26, #214c73, #153243, #2c5d63, #5c9ca4);
+    background-size: 400% 400%; /* Aumenta o tamanho do gradiente */
+    animation: gradientAnimation 15s ease infinite; /* Aplica a animação */
+}
+
+/* Adicione este novo bloco de código no final do seu ficheiro CSS */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* ==================== PORTFOLIO GRID ==================== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+    padding: 20px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.portfolio-item h3 {
+    margin-bottom: 10px;
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* ==================== ESTILOS PARA A SECÇÃO SOBRE ==================== */
+
+/* O container principal com 2 colunas */
+.about-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente a imagem e o conteúdo */
+    gap: 3rem;           /* Espaço entre a imagem e o texto */
+    text-align: left;    /* Alinha o texto à esquerda nesta secção */
+}
+
+/* Coluna da imagem e do conteúdo, cada uma ocupa metade do espaço */
+.about-image,
+.about-content {
+    flex: 1; /* Faz com que ambas as colunas partilhem o espaço igualmente */
+}
+
+/* Estilo para a imagem ficar responsiva e bonita */
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Estilos para a lista de localidades */
+.locations-list {
+    list-style: none; /* Remove os pontos da lista */
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Espaço entre o ícone e o texto da localização */
+    margin-bottom: 0.5rem;
+    font-size: 1.1em;
+}
+
+/* ==================== AJUSTES PARA TELEMÓVEIS (Responsividade) ==================== */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Coloca a imagem em cima do texto */
+        text-align: center;     /* Centraliza o texto no mobile */
+    }
+
+    .about-content {
+        margin-top: 2rem;
+    }
+    
+    .locations-list {
+        display: inline-block; /* Alinha a lista de localizações ao centro */
+        text-align: left;
+    }
+
+    .section-title {
+        font-size: 2em; /* Reduz um pouco o tamanho do título em ecrãs pequenos */
+    }
+}
+
+/* ==================== ESTILOS PARA A SECÇÃO DE TECNOLOGIAS ==================== */
+
+/* A grelha que segura todos os itens */
+.tech-grid {
+    display: grid;
+    /* Cria colunas responsivas: tenta encaixar o máximo de colunas com 120px de largura */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem; /* Espaço entre os itens da grelha */
+    max-width: 800px;
+    margin: 2rem auto 0; /* Espaçamento superior e centralização */
+}
+
+/* Cada item individual da grelha (ícone + nome) */
+.tech-item {
+    display: flex;
+    flex-direction: column; /* Coloca o ícone em cima do nome */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para o hover */
+}
+
+/* Efeito de "levantar" ao passar o rato por cima */
+.tech-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.tech-icon {
+    margin-bottom: 0.75rem; /* Espaço entre o ícone e o nome */
+}
+
+.tech-name {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* ==================== ESTILOS PARA O FORMULÁRIO DE CONTACTO ==================== */
+
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007BFF; /* Cor de destaque ao focar no campo */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Ajusta o botão para ocupar a largura total do formulário */
+.contact-form .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1em;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  background-color: #e8f5e9;
+  border-left: 5px solid #4CAF50;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 2rem auto 0;
+}
+
+.error-message {
+  color: #D32F2F;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+}
